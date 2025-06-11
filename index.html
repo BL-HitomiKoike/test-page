@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>3つのボタン</title>
+  <title>3つのボタン（計測あり）</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,11 +14,20 @@
       font-size: 16px;
     }
   </style>
+  <script>
+    // これは仮の実装。実際の環境では MyrecTraceClick は外部JS等で提供される想定
+    const MyrecTraceClick = {
+      sendLog: function(param1, param2) {
+        console.log("送信されたログ：", param1, param2);
+        // 本番環境ではここで実際の計測サーバーへ送信される
+      }
+    };
+  </script>
 </head>
 <body>
   <h1>ボタンが3つあります</h1>
-  <button onClick=MyrecTraceClick.sendLog('詳細を見る','btn1');></button></button>
-  <button onclick="alert('ボタン2が押されました')">ボタン2</button>
-  <button onclick="alert('ボタン3が押されました')">ボタン3</button>
+  <button id="btn1" onclick="MyrecTraceClick.sendLog('ボタン1', 'btn1')">ボタン1</button>
+  <button id="btn2" onclick="MyrecTraceClick.sendLog('ボタン2', 'btn2')">ボタン2</button>
+  <button id="btn3" onclick="MyrecTraceClick.sendLog('ボタン3', 'btn3')">ボタン3</button>
 </body>
 </html>
