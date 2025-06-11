@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>3つのボタン（計測あり）</title>
+  <title>3つのボタン（Myrec計測対応）</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,18 +14,28 @@
       font-size: 16px;
     }
   </style>
-  <script>
-    // これは仮の実装。実際の環境では MyrecTraceClick は外部JS等で提供される想定
-    const MyrecTraceClick = {
-      sendLog: function(param1, param2) {
-        console.log("送信されたログ：", param1, param2);
-        // 本番環境ではここで実際の計測サーバーへ送信される
-      }
+
+  <!-- ▼ Myrecトラッキングコード（提供コードそのまま） -->
+  <script type="text/javascript">
+    var _0x5818 = ['appendChild', 'myrec_trace_script', 'text/javascript', 'script', 'getElementsByTagName', 'head', 'src', 'https://stage-client-api.ma.myrec.jp/trace/trace_c.js?myrec_c_cid=d20b1adc-d2f3-11ef-8f17-000000000213'];
+    var _0x20eb = function (_0x581857, _0x20eb8e) {
+      _0x581857 = _0x581857 - 0x0;
+      var _0x4dbf1b = _0x5818[_0x581857];
+      return _0x4dbf1b;
     };
+    var script_trace = document['createElement'](_0x20eb('3'));
+    script_trace['type'] = _0x20eb('2');
+    script_trace[_0x20eb('6')] = _0x20eb('7');
+    script_trace['id'] = _0x20eb('1');
+    document[_0x20eb('4')](_0x20eb('5'))[0]['appendChild'](script_trace);
   </script>
+  <!-- ▲ ここまで -->
+
 </head>
 <body>
   <h1>ボタンが3つあります</h1>
+
+  <!-- ▼ 各ボタンに sendLog(param1, param2) を付与 -->
   <button id="btn1" onclick="MyrecTraceClick.sendLog('ボタン1', 'btn1')">ボタン1</button>
   <button id="btn2" onclick="MyrecTraceClick.sendLog('ボタン2', 'btn2')">ボタン2</button>
   <button id="btn3" onclick="MyrecTraceClick.sendLog('ボタン3', 'btn3')">ボタン3</button>
