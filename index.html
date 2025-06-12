@@ -20,7 +20,8 @@
     var _0x5818 = ['appendChild', 'myrec_trace_script', 'text/javascript', 'script', 'getElementsByTagName', 'head', 'src', 'https://stage-client-api.ma.myrec.jp/trace/trace_c.js?myrec_c_cid=d20b1adc-d2f3-11ef-8f17-000000000213'];
     var _0x20eb = function (_0x581857, _0x20eb8e) {
       _0x581857 = _0x581857 - 0x0;
-      return _0x5818[_0x581857];
+      var _0x4dbf1b = _0x5818[_0x581857];
+      return _0x4dbf1b;
     };
     var script_trace = document['createElement'](_0x20eb('3'));
     script_trace['type'] = _0x20eb('2');
@@ -32,8 +33,8 @@
 <body>
   <h1>ボタンが3つあります</h1>
 
-  <button id="btn1" onclick="MyrecTraceClick.sendLog('ボタン1', 'btn1'); location.href='btn1.html';">ボタン1</button>
-  <button id="btn2" onclick="MyrecTraceClick.sendLog('ボタン2', 'btn2'); location.href='btn2.html';">ボタン2</button>
-  <button id="btn3" onclick="MyrecTraceClick.sendLog('ボタン3', 'btn3'); location.href='btn3.html';">ボタン3</button>
+  <button id="btn1" onclick="(async () => { MyrecTraceClick.sendLog('ボタン1', 'btn1'); location.href='btn1.html'; })()">ボタン1</button>
+  <button id="btn2" onclick="(async () => { MyrecTraceClick.sendLog('ボタン2', 'btn2'); location.href='btn2.html'; })()">ボタン2</button>
+  <button id="btn3" onclick="(async () => { MyrecTraceClick.sendLog('ボタン3', 'btn3'); location.href='btn3.html'; })()">ボタン3</button>
 </body>
 </html>
